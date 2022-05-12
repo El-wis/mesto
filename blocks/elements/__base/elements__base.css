@@ -1,0 +1,7 @@
+.elements__base {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 15px 0 0 0;
+    padding: 0 15px 0 20px;
+}

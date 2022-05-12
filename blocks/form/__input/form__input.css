@@ -1,0 +1,9 @@
+.form__input {
+    height: 27px;
+    margin: 0;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 0;
+}

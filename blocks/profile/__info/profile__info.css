@@ -1,0 +1,8 @@
+.profile__info {
+    display: flex;
+    align-items: center;
+}
+
+.profile__info {
+    flex-direction: column;
+}
