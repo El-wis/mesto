@@ -1,87 +1,123 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mesto</title>
-    <link href="./pages/index.css" rel="stylesheet">
-</head>
-<body>
+    <link href="./pages/index.css" rel="stylesheet" />
+  </head>
+  <body>
     <div class="page">
-        <header class="header">
-            <div class="header__logo"> </div>
-        </header>
-        <main class="content">
-            <section class="profile">
-                <div class="profile__info">
-                    <img class="profile__avatar" src="./images/Avatar (1).png">
-                    <div class="profile__text">
-                        <h1 class="profile__title">Жак-Ив Кусто</h1>
-                        <button class="profile__edit-button"></button>
-                        <p class="profile__subtitle">Исследователь океана</p>
-                    </div>
-                </div>
-                <button class="profile__add-button"></button>
-            </section>
-            <section class="elements">
-                <div class="elements__item">
-                    <img class="elements__image" src="images/Mask Group (1).png" alt="Вид с высоты на церковь в горах">
-                    <div class="elements__base">
-                        <h2 class="elements__title">Карачаевск</h2>
-                        <button class="elements__button-heart"></button>
-                    </div>
-                </div>
-                <div class="elements__item">
-                    <img class="elements__image" src="images/Mask Group14 (1).png" alt="Горы на закате">
-                    <div class="elements__base">
-                        <h2 class="elements__title">Гора Эльбрус</h2>
-                        <button class="elements__button-heart"></button>
-                    </div>
-                </div>
-                <div class="elements__item">
-                    <img class="elements__image" src="images/Mask Group15.png" alt="Вид на горы и лес">
-                    <div class="elements__base">
-                        <h2 class="elements__title">Домбай</h2>
-                        <button class="elements__button-heart"></button>
-                    </div>
-                </div>
-                <div class="elements__item">
-                    <img class="elements__image" src="images/Mask Group14 (1).png" alt="Горы на закате">
-                    <div class="elements__base">
-                        <h2 class="elements__title">Гора Эльбрус</h2>
-                        <button class="elements__button-heart"></button>
-                    </div>
-                </div>
-                <div class="elements__item">
-                    <img class="elements__image" src="images/Mask Group15.png" alt="Горы и лес">
-                    <div class="elements__base">
-                        <h2 class="elements__title">Домбай</h2>
-                        <button class="elements__button-heart"></button>
-                    </div>
-                </div>
-                <div class="elements__item">
-                    <img class="elements__image" src="images/Mask Group (1).png" alt="Вид с высоты на церковь в горах">
-                    <div class="elements__base">
-                        <h2 class="elements__title">Карачаево-Черкессия</h2>
-                        <button class="elements__button-heart"></button>
-                    </div>
-                </div>
-            </section>
-        </main>
-        <footer class="footer">
-            <p class="footer__text">© 2020 Mesto Russia</p>
-        </footer>
-        <div class="popup">
-            <form class="popup__container">
-                <h2 class="popup__title">Редактировать профиль</h2>
-                <input type="text"  value="" class="popup__input popup__input_type_name">
-                <input type="text" value="" class="popup__input popup__input_type_job">
-                <button class="popup__button">Сохранить</button>
-                <div class="popup__close-icon"></div>
-            </form>
-        </div>
+      <header class="header">
+        <div class="header__logo"></div>
+      </header>
+      <main class="content">
+        <section class="profile">
+          <div class="profile__info">
+            <img
+              class="profile__avatar"
+              src="./images/Avatar (1).png"
+              alt="аватар человека"
+            />
+            <div class="profile__text">
+              <h1 class="profile__title">Жак-Ив Кусто</h1>
+              <button class="profile__edit-button"></button>
+              <p class="profile__subtitle">Исследователь океана</p>
+            </div>
+          </div>
+          <button class="profile__add-button"></button>
+        </section>
+        <section class="elements">
+          <div class="elements__item">
+            <img
+              class="elements__image"
+              src="images/Mask Group (1).png"
+              alt="Вид с высоты на церковь в горах"
+            />
+            <div class="elements__base">
+              <h2 class="elements__title">Карачаевск</h2>
+              <button class="elements__button-heart"></button>
+            </div>
+          </div>
+          <div class="elements__item">
+            <img
+              class="elements__image"
+              src="images/Mask Group14 (1).png"
+              alt="Горы на закате"
+            />
+            <div class="elements__base">
+              <h2 class="elements__title">Гора Эльбрус</h2>
+              <button class="elements__button-heart"></button>
+            </div>
+          </div>
+          <div class="elements__item">
+            <img
+              class="elements__image"
+              src="images/Mask Group15.png"
+              alt="Вид на горы и лес"
+            />
+            <div class="elements__base">
+              <h2 class="elements__title">Домбай</h2>
+              <button class="elements__button-heart"></button>
+            </div>
+          </div>
+          <div class="elements__item">
+            <img
+              class="elements__image"
+              src="images/Mask Group14 (1).png"
+              alt="Горы на закате"
+            />
+            <div class="elements__base">
+              <h2 class="elements__title">Гора Эльбрус</h2>
+              <button class="elements__button-heart"></button>
+            </div>
+          </div>
+          <div class="elements__item">
+            <img
+              class="elements__image"
+              src="images/Mask Group15.png"
+              alt="Горы и лес"
+            />
+            <div class="elements__base">
+              <h2 class="elements__title">Домбай</h2>
+              <button class="elements__button-heart"></button>
+            </div>
+          </div>
+          <div class="elements__item">
+            <img
+              class="elements__image"
+              src="images/Mask Group (1).png"
+              alt="Вид с высоты на церковь в горах"
+            />
+            <div class="elements__base">
+              <h2 class="elements__title">Карачаево-Черкессия</h2>
+              <button class="elements__button-heart"></button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <p class="footer__text">© 2020 Mesto Russia</p>
+      </footer>
+      <div class="popup">
+        <form class="popup__container">
+          <h2 class="popup__title">Редактировать профиль</h2>
+          <input
+            type="text"
+            value=""
+            class="popup__input popup__input_type_name"
+          />
+          <input
+            type="text"
+            value=""
+            class="popup__input popup__input_type_job"
+          />
+          <button class="popup__button">Сохранить</button>
+          <div class="popup__close-icon"></div>
+        </form>
+      </div>
     </div>
     <script src="./scripts/index.js"></script>
-</body>
-</html> 
+  </body>
+</html>
