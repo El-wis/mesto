@@ -6,3 +6,16 @@
     background: url(../../../images/Edit\ Button.svg) no-repeat;
     background-position: center;
 }
+
+.profile__edit-button:hover {
+    background: url(../../../images/Edit\ Button_hover.svg) no-repeat;
+    background-position: center;
+    transition: 0.3s;
+}
+
+@media screen and (max-width: 768px) {
+    .profile__edit-button {
+        width: 18px;
+        height: 18px;
+    }
+}

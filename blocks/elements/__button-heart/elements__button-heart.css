@@ -1,6 +1,15 @@
 .elements__button-heart {
+    cursor: pointer;
     width: 22px;
     height: 19px;
     border: none;
     background: url(../../../images/Group.svg) no-repeat;
+}
+
+.elements__button-heart:hover {
+    background: url(../../../images/Vector_heart_hover.svg) no-repeat;
+}
+
+.elements__button-heart:active {
+    background: url(../../../images/Union_activ.svg)
 }
