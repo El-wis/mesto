@@ -8,6 +8,7 @@
 }
 
 .profile__edit-button:hover {
+    border: 1px solid rgba(255, 255, 255, 0.6);
     background: url(../../../images/Edit\ Button_hover.svg) no-repeat;
     background-position: center;
     transition: 0.3s;
