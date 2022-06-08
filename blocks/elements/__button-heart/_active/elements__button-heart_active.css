@@ -1,0 +1,7 @@
+.elements__button-heart_active {
+    cursor: pointer;
+    width: 22px;
+    height: 19px;
+    border: none;
+    background: url(../../../../images/Union_activ.svg);
+}
