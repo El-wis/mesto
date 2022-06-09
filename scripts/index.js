@@ -2,9 +2,12 @@ let editButton = document.querySelector(".profile__edit-button");
 let addButton = document.querySelector(".profile__add-button");
 let closeButton = document.querySelector(".popup__close-icon");
 let closeButtonCard = document.querySelector(".popup_type_cards .popup__close-icon");
+let closeButtonImage = document.querySelector(".popup_type_image .popup__close-icon")
+
 
 let popup = document.querySelector(".popup");
 let popupProfile = document.querySelector(".popup_type_profile");
+let popupImage = document.querySelector(".popup_type_image");
 let popupCards = document.querySelector(".popup_type_cards");
 let formElement = document.querySelector(".popup__form");
 let formCard = document.querySelector(".popup_type_cards .popup__form");
@@ -77,6 +80,10 @@ function closePopupCard() {
   closePopup(popupCards);
 };
 
+function closePopupImage() {
+  closePopup(popupImage);
+}
+
 
 /* */
 function formSubmitHandler(evt) {
@@ -96,6 +103,7 @@ function addCards(element) {
 
   card.querySelector('.elements__title').textContent = element.name;
   card.querySelector('.elements__image').src = element.link;
+  card.querySelector('.elements__image').alt = element.name;
 
   const heartButton = card.querySelector(".elements__button-heart");
   heartButton.addEventListener("click", likeCard);
@@ -103,9 +111,23 @@ function addCards(element) {
   const removeButton = card.querySelector('.elements__button-trash');
   removeButton.addEventListener('click', removeCard);
 
-  return card;
+  const image = card.querySelector('.elements__image');
+  image.addEventListener('click', openImage);
 
+  return card;
 };
+
+function openImage(event) {
+  const image = document.querySelector('.popup__image');
+  const imageCaption = document.querySelector('.popup__caption'); 
+
+  image.src = event.target.src;
+  imageCaption.textContent = event.target.alt;
+
+  openPopup(popupImage);
+};
+
+
 
 function removeCard(event) {
   event.target.closest(".elements__item").remove();
@@ -142,7 +164,10 @@ function formSubmitCard(evt) {
 
 formElement.addEventListener("submit", formSubmitHandler);
 editButton.addEventListener("click", openForm);
+
 closeButton.addEventListener("click", closePopupProfile);
 closeButtonCard.addEventListener("click", closePopupCard);
+closeButtonImage.addEventListener("click", closePopupImage);
+
 addButton.addEventListener("click", openPopupCards);
 formCard.addEventListener("submit", formSubmitCard);
