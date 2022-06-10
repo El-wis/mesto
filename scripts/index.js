@@ -4,7 +4,6 @@ let closeButton = document.querySelector(".popup__close-icon");
 let closeButtonCard = document.querySelector(".popup_type_cards .popup__close-icon");
 let closeButtonImage = document.querySelector(".popup_type_image .popup__close-icon")
 
-
 let popup = document.querySelector(".popup");
 let popupProfile = document.querySelector(".popup_type_profile");
 let popupImage = document.querySelector(".popup_type_image");
@@ -50,8 +49,6 @@ const initialCards = [
   }
 ];
 
-
-/* */
 function openPopup(el) {
   el.classList.add("popup_opened");
 }
@@ -66,8 +63,6 @@ function openPopupCards() {
   openPopup(popupCards);
 };
 
-
-/* */
 function closePopup(el) {
   el.classList.remove("popup_opened");
 }
@@ -84,8 +79,6 @@ function closePopupImage() {
   closePopup(popupImage);
 }
 
-
-/* */
 function formSubmitHandler(evt) {
   evt.preventDefault();
 
@@ -94,7 +87,6 @@ function formSubmitHandler(evt) {
   openForm();
   closePopupProfile();
 };
-
 
 function addCards(element) {
 
