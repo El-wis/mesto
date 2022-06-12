@@ -8,3 +8,7 @@
     border: none;
     cursor: pointer;
 }
+
+.elements__button-trash:hover {
+    background: url(../../../images/Trashi.png)no-repeat;
+}
