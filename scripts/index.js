@@ -54,7 +54,7 @@ function closePopupImage() {
   closePopup(popupImage);
 }
 
-function handleSubmitForm(evt) {
+function handleProfileSubmit(evt) {
   evt.preventDefault();
 
   profileName.textContent = nameInput.value;
@@ -105,7 +105,7 @@ initialCards.forEach(function (element) {
   elements.append(createCard(element));
 });
 
-function submitFormCard(evt) {
+function handleAddCardSubmit(evt) {
   evt.preventDefault();
 
   const newCard = {
@@ -120,7 +120,7 @@ function submitFormCard(evt) {
   closePopupCard();
 }
 
-formProfile.addEventListener("submit", handleSubmitForm);
+formProfile.addEventListener("submit", handleProfileSubmit);
 editButton.addEventListener("click", openProfileForm);
 
 closeButton.addEventListener("click", closePopupProfile);
@@ -128,4 +128,4 @@ closeButtonCard.addEventListener("click", closePopupCard);
 closeButtonImage.addEventListener("click", closePopupImage);
 
 addButton.addEventListener("click", openPopupCards);
-formCard.addEventListener("submit", submitFormCard);
+formCard.addEventListener("submit", handleAddCardSubmit);
