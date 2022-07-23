@@ -47,7 +47,7 @@
         <div class="popup__container">
           <form
             class="popup__form popup__form_type_profile"
-            name="profile-form"
+            name="profile-form" novalidate
           >
             <h2 class="popup__title">Редактировать профиль</h2>
             <input
@@ -55,15 +55,21 @@
               name="input-name"
               value=""
               required
+              minlength="2"
+              maxlength="40"
               class="popup__input popup__input_type_name"
             />
+            <span class="input-name-error"></span>
             <input
               type="text"
               name="input-job"
               value=""
               required
+              minlength="2"
+              maxlength="200"
               class="popup__input popup__input_type_job"
             />
+            <span class="input-job-error"></span>
             <button class="popup__button" type="submit">Сохранить</button>
             <button class="popup__close-icon" type="button"></button>
           </form>
@@ -71,7 +77,7 @@
       </div>
       <div class="popup popup_type_cards">
         <div class="popup__container">
-          <form class="popup__form" name="profile-form">
+          <form class="popup__form" name="profile-form" novalidate>
             <h2 class="popup__title">Новое место</h2>
             <input
               type="text"
@@ -102,6 +108,7 @@
         </div>
       </div>
     </div>
+    <script src="./scripts/validate.js"></script>
     <script src="./scripts/cards.js"></script>
     <script src="./scripts/index.js"></script>
   </body>
