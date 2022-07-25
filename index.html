@@ -84,9 +84,12 @@
               name="input-name"
               value=""
               required
+              minlength="2"
+              maxlength="30"
               placeholder="Название"
               class="popup__input popup__input_type_title"
             />
+            <span class="input-name-error"></span>
             <input
               type="url"
               name="input-url"
@@ -95,6 +98,7 @@
               placeholder="Ссылка на картинку"
               class="popup__input popup__input_type_url"
             />
+            <span class="input-url-error"></span>
             <button class="popup__button" type="submit">Создать</button>
             <button class="popup__close-icon" type="button"></button>
           </form>
