@@ -11,6 +11,7 @@ const closeButtonImage = document.querySelector(
 const popupProfile = document.querySelector(".popup_type_profile");
 const popupImage = document.querySelector(".popup_type_image");
 const popupCards = document.querySelector(".popup_type_cards");
+const popups = document.querySelectorAll(".popup");
 const formProfile = document.querySelector(".popup__form_type_profile");
 const formCard = document.querySelector(".popup_type_cards .popup__form");
 
@@ -26,33 +27,46 @@ const elements = document.querySelector(".elements");
 
 function openPopup(el) {
   el.classList.add("popup_opened");
-}
+  document.addEventListener("keydown", closePopupEsc);
+};
 
 function openProfileForm() {
   nameInput.value = profileName.textContent;
   jobInput.value = profileJob.textContent;
   openPopup(popupProfile);
-}
+};
 
 function openPopupCards() {
   openPopup(popupCards);
-}
+};
 
 function closePopup(el) {
   el.classList.remove("popup_opened");
-}
+  document.removeEventListener("keydown", closePopupEsc);
+};
 
 function closePopupProfile() {
   closePopup(popupProfile);
-}
+};
 
 function closePopupCard() {
   closePopup(popupCards);
-}
+};
 
 function closePopupImage() {
   closePopup(popupImage);
-}
+};
+
+function closeOpenedPopup() {
+  const openedPopup = document.querySelector(".popup_opened");
+  closePopup(openedPopup);
+};
+
+function closePopupEsc(evt) {
+  if(evt.key === "Escape") {
+    closeOpenedPopup();
+  }
+};
 
 function handleProfileSubmit(evt) {
   evt.preventDefault();
@@ -107,18 +121,23 @@ initialCards.forEach(function (element) {
 
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
-
   const newCard = {
     name: titleInput.value,
     link: urlInput.value,
   };
 
   elements.prepend(createCard(newCard));
-
   evt.target.reset();
-  
   closePopupCard();
 }
+
+popups.forEach((popup) => {
+  popup.addEventListener("click", (evt) => {
+    if(evt.target === evt.currentTarget || evt.target.classList.contains(".popup__close-icon")) {
+      closePopup(popup);
+    }
+  })
+});
 
 formProfile.addEventListener("submit", handleProfileSubmit);
 editButton.addEventListener("click", openProfileForm);
