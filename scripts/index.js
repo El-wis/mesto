@@ -36,13 +36,13 @@ function openPopup(el) {
 function openProfileForm() {
   nameInput.value = profileName.textContent;
   jobInput.value = profileJob.textContent;
-  enableValidation(obj);
   deleteError(popupProfile, obj);
   openPopup(popupProfile);
 };
 
 function openPopupCards() {
-  enableValidation(obj);
+  titleInput.value = null;
+  urlInput.value = null;
   deleteError(popupCards, obj);
   openPopup(popupCards);
 };
@@ -93,8 +93,8 @@ function createCard(initialCard) {
   const heartButton = card.querySelector(".elements__button-heart");
   heartButton.addEventListener("click", likeCard);
 
-  const removeButton = card.querySelector(".elements__button-trash");
-  removeButton.addEventListener("click", removeCard);
+  const trashButton = card.querySelector(".elements__button-trash");
+  trashButton.addEventListener("click", removeCard);
 
   imageCard.addEventListener("click", openImage);
 
