@@ -1,3 +1,5 @@
+import { Card } from "../scripts/Card.js";
+
 const container = document.querySelector("#container").content;
 const buttonProfileEdit = document.querySelector(".profile__edit-button");
 const buttonProfileAdd = document.querySelector(".profile__add-button");
@@ -83,17 +85,25 @@ function handleProfileSubmit(evt) {
 };
 
 function createCard(initialCard) {
-  const card = container.querySelector(".elements__item").cloneNode(true);
-  const imageCard = card.querySelector(".elements__image");
+  const newCard = new Card(initialCard, '#container').generateCard();
+  return newCard;
+};
 
+/*
+function createCard(initialCard) {
+  const card = container.querySelector(".elements__item").cloneNode(true);
+
+  const imageCard = card.querySelector(".elements__image");
   card.querySelector(".elements__title").textContent = initialCard.name;
   imageCard.src = initialCard.link;
   imageCard.alt = initialCard.name;
 
   const heartButton = card.querySelector(".elements__button-heart");
+  
   heartButton.addEventListener("click", likeCard);
 
   const trashButton = card.querySelector(".elements__button-trash");
+  
   trashButton.addEventListener("click", removeCard);
 
   imageCard.addEventListener("click", openImage);
@@ -114,7 +124,7 @@ function removeCard(event) {
 
 function likeCard(event) {
   event.target.classList.toggle("elements__button-heart_active");
-};
+};*/
 
 initialCards.forEach(function (element) {
   cardsContainer.append(createCard(element));
