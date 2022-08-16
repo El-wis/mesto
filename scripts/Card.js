@@ -1,3 +1,5 @@
+import {image, imageCaption, openPopup, popupImage } from "../scripts/index.js"
+
 export class Card {
     constructor(data, cardTemplate) {
         this._name = data.name;
@@ -34,7 +36,7 @@ export class Card {
     };
 
     _likeCard() {
-        this._element.querySelector("elements__button-heart").classList.toggle("elements__button-heart_active");
+        this._element.querySelector(".elements__button-heart").classList.toggle("elements__button-heart_active");
     };
 
     _removeCard() {
