@@ -42,17 +42,25 @@ export function openPopup(el) {
   document.addEventListener("keydown", closePopupEsc);
 };
 
+export function handleCardClick(name, link) {
+  image.src = link;
+  imageCaption.textContent = name;
+  image.alt = name;
+  openPopup(popupImage);
+}
+
+
 export function openProfileForm() {
   nameInput.value = profileName.textContent;
   jobInput.value = profileJob.textContent;
-  validateProfile.deleteError();
+  validateProfile.resetValidation();
   openPopup(popupProfile);
 };
 
 export function openPopupCards() {
   titleInput.value = null;
   urlInput.value = null;
-  validateAddCard.deleteError();
+  validateAddCard.resetValidation();
   openPopup(popupCards);
 };
 
@@ -92,7 +100,7 @@ function handleProfileSubmit(evt) {
 };
 
 function createCard(initialCard) {
-  const newCard = new Card(initialCard, '#container').generateCard();
+  const newCard = new Card(initialCard, '#container', handleCardClick).generateCard();
   return newCard;
 };
 

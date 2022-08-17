@@ -1,12 +1,11 @@
-import {image, imageCaption, openPopup, popupImage } from "../scripts/index.js"
-
 export class Card {
-    constructor(data, cardTemplate) {
+    constructor(data, cardTemplate, handleCardClick) {
         this._name = data.name;
         this._link = data.link;
         this._cardTemplate = cardTemplate;
+        this._handleCardClick = handleCardClick;
     }
-
+    
     _getTemplate() {
         const card = document.querySelector(this._cardTemplate).content.querySelector(".elements__item").cloneNode(true);
         return card;
@@ -14,15 +13,18 @@ export class Card {
 
     generateCard() {
         this._element = this._getTemplate();
-        this._setEventListener();
         this._imageCard = this._element.querySelector(".elements__image");
         this._element.querySelector(".elements__title").textContent = this._name;
         this._imageCard.src = this._link;
+        this._imageCard.alt = this._name;
+        this._setEventListener();
         return this._element;
     };
 
     _setEventListener() {
-        this._element.querySelector(".elements__button-heart").addEventListener("click", () => {
+        this._likeButton = this._element.querySelector(".elements__button-heart");
+        
+        this._likeButton.addEventListener("click", () => {
             this._likeCard();
           });
 
@@ -30,23 +32,17 @@ export class Card {
             this._removeCard();
           });
 
-          this._element.querySelector(".elements__image").addEventListener("click", () => {
-            this._openImage();
+          this._imageCard.addEventListener("click", () => {
+            this._handleCardClick(this._name, this._link);
           });
     };
 
     _likeCard() {
-        this._element.querySelector(".elements__button-heart").classList.toggle("elements__button-heart_active");
+        this._likeButton.classList.toggle("elements__button-heart_active");
     };
 
     _removeCard() {
         this._element.remove();
     };
 
-    _openImage() {
-        image.src = this._link;
-        imageCaption.textContent = this._name;
-        image.alt = this._name;
-        openPopup(popupImage);
-    };
 }
