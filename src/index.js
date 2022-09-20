@@ -1,11 +1,13 @@
-import { initialCards } from "./initialCards.js";
-import Card from "./components/Card.js";
-import Section from "../scripts/components/Section.js";
-import { FormValidator } from "./components/FormValidator.js";
-import { PopupWithForm } from "./components/PopupWithForm.js";
-import Popup from "./components/Popup.js";
-import { PopupWithImage } from "./components/PopupWithImage.js";
-import UserInfo from "./components/UserInfo.js";
+import './pages/index.css';
+
+import { initialCards } from "./scripts/initialCards.js";
+import Card from "./scripts/components/Card.js";
+import Section from "./scripts/components/Section.js";
+import { FormValidator } from "./scripts/components/FormValidator.js";
+import { PopupWithForm } from "./scripts/components/PopupWithForm.js";
+import Popup from "./scripts/components/Popup.js";
+import { PopupWithImage } from "./scripts/components/PopupWithImage.js";
+import UserInfo from "./scripts/components/UserInfo.js";
 
 const buttonProfileEdit = document.querySelector(".profile__edit-button");
 const buttonAddCard = document.querySelector(".profile__add-button");
