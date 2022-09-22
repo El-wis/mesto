@@ -5,13 +5,13 @@
     position: absolute;
     top: -40px;
     right: -40px;
-    background: url(../../../images/Close\ Icon.svg);
+    background: url(../../../images/CloseIcon.svg);
     background-size: contain;
     border: none;
 }
 
 .popup__close-icon:hover {
-    background: url(../../../images/Close\ Icon_hover.svg);
+    background: url(../../../images/CloseIcon_hover.svg);
     background-size: contain;
     transition: 0.3s;
 }

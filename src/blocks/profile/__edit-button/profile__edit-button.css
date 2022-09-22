@@ -3,13 +3,13 @@
     width: 24px;
     height: 24px;
     border: 1px solid #FFFFFF;
-    background: url(../../../images/Edit\ Button.svg) no-repeat;
+    background: url(../../../images/EditButton.svg) no-repeat;
     background-position: center;
 }
 
 .profile__edit-button:hover {
     border: 1px solid rgba(255, 255, 255, 0.6);
-    background: url(../../../images/Edit\ Button_hover.svg) no-repeat;
+    background: url(../../../images/EditButton_hover.svg) no-repeat;
     background-position: center;
     transition: 0.3s;
 }
