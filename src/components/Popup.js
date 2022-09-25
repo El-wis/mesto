@@ -19,14 +19,7 @@ export default class Popup {
         }
       };
 
-    _closeOverlay = (evt) => {
-        if(evt.target === evt.currentTarget || evt.target.classList.contains("popup__close-icon")) {
-            this.close();
-        }
-      }
-
     setEventListeners() {
-       //this.popupSelector.addEventListener("click", this._closeOverlay);
        this.popupSelector.addEventListener("click", (evt) => {
         if(evt.target === evt.currentTarget || evt.target.classList.contains("popup__close-icon")) {
             this.close();

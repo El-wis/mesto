@@ -5,22 +5,18 @@ import Card from "../components/Card.js";
 import Section from "../components/Section.js";
 import { FormValidator } from "../components/FormValidator.js";
 import { PopupWithForm } from "../components/PopupWithForm.js";
-import Popup from "../components/Popup.js";
 import { PopupWithImage } from "../components/PopupWithImage.js";
 import UserInfo from "../components/UserInfo.js";
 
 const buttonProfileEdit = document.querySelector(".profile__edit-button");
 const buttonAddCard = document.querySelector(".profile__add-button");
 
-export const popupProfile = document.querySelector(".popup_type_profile");
-export const popupImage = document.querySelector(".popup_type_image");
 export const popupCards = document.querySelector(".popup_type_cards");
-export const popups = document.querySelectorAll(".popup");
 export const formProfile = document.querySelector(".popup__form_type_profile");
-export const formCard = document.querySelector(".popup_type_cards .popup__form");
 
 export const nameInput = document.querySelector(".popup__input_type_name");
 export const jobInput = document.querySelector(".popup__input_type_job");
+
 export const titleInput = document.querySelector(".popup__input_type_title");
 export const urlInput = document.querySelector(".popup__input_type_url");
 export const image = document.querySelector(".popup__image");
@@ -28,7 +24,6 @@ export const imageCaption = document.querySelector(".popup__caption");
 
 export const profileName = document.querySelector(".profile__title");
 export const profileJob = document.querySelector(".profile__subtitle");
-export const cardsContainer = document.querySelector(".elements");
 
 const obj = {
   formSelector: ".popup__form",
@@ -60,14 +55,6 @@ const cardList = new Section ({
    
 cardList.renderItems();
 
-
-function handleProfileSubmit(evt) {
-  //evt.preventDefault();
-  profileName.textContent = nameInput.value;
-  profileJob.textContent = jobInput.value;
-  //popupEditProfile.close();
-};
-
 /*Открытие попапа с картинкой*/ 
 const openImage = new PopupWithImage({popupSelector: '.popup_type_image'}, image, imageCaption);
 
@@ -98,20 +85,22 @@ const userData = new UserInfo({profileName: '.profile__title' , profileJob: '.pr
 const popupEditProfile = new PopupWithForm({
   popupSelector: '.popup_type_profile', 
   handleSubmitForm: (item) => {
+    //profileName.textContent = nameInput.value;
+    //profileJob.textContent = jobInput.value;
     userData.setUserInfo(item);
-    handleProfileSubmit(item);
   }
 });
 
 popupEditProfile.setEventListeners();
 
-buttonProfileEdit.addEventListener("click", () => {
+function setProfileInfo() {
   popupEditProfile.open();
-  const userInfo = userData.getUserInfo();
-  nameInput.value = userInfo.name;
-  jobInput.value = userInfo.info;
-}
-)
+  const {name, job} = userData.getUserInfo();
+  nameInput.value = name;
+  jobInput.value = job;
+};
+
+buttonProfileEdit.addEventListener("click", setProfileInfo);
 
 //formProfile.addEventListener("submit", handleProfileSubmit);
 
